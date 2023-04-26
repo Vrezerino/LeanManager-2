@@ -1,0 +1,119 @@
+@keyframes emerge {
+	from {
+		opacity: 0.7;
+		margin-top: -15px;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes disappear {
+	to {
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+}
+
+@font-face {
+	font-family: 'WorkSans';
+	src: url('../fonts/work-sans.extralight.ttf') format('truetype');
+	font-weight: bolder;
+	font-style: normal;
+}
+
+html {
+	color: rgb(255, 248, 207);
+	background-image: url('../img/pexels-tiger-lily-4483610_dark.jpg');
+	background-color: rgb(20, 20, 20);
+}
+
+body,
+::placeholder {
+	padding: 0;
+	margin: 0;
+	font-family: "WorkSans";
+	font-size: larger;
+}
+
+.container {
+	padding: 140px 0 0 0;
+	text-align: center;
+}
+
+.serverMessage {
+	font-weight: bold;
+	color: white;
+}
+
+.panel {
+	background: linear-gradient(45deg, rgba(0, 0, 255, 0.384), rgb(23, 23, 39));
+	margin: 0px -20px;
+	padding: 15px;
+	animation: 1.2s emerge;
+	width: 100%;
+	height: auto;
+	position: fixed;
+	text-align: right;
+}
+
+.logout input {
+	font-family: "WorkSans";
+	font-size: larger;
+	margin: 5px 5px 0px 0px;
+}
+
+h1,
+h2 {
+	margin: 0;
+	padding: 0;
+}
+
+.error {
+	animation: disappear 0s ease-in 5s forwards;
+}
+
+.error, .deleteAsset {
+	color: red;
+}
+
+ol {
+	display: inline-block;
+}
+
+.assetsTable {
+	table-layout: fixed;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.assetsTable td {
+	text-overflow: ellipsis;
+	padding: 4px;
+}
+
+.assetForm {
+	padding: 15px;
+	width: 100%;
+	height: auto;
+	bottom: 0%;
+	position: fixed;
+}
+
+.assetsTable,
+.assetForm {
+	text-align: center;
+}
+
+
+.panel,
+.assetForm,
+td {
+	background-color: rgb(23, 23, 39);
+}
+
+input {
+	margin: 2px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en">
+	<meta charset="UTF-8" />
+	<title>LeanManager 2 Inventory</title>
+	<link th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="panel">
+		<h1 style="font-weight: bolder;">LeanManager 2</h1>
+		<form th:action="@{/logout}" method="POST" class="logout">
+			<input type="submit" value="Logout"></input>
+		</form>
+	</div>
+	<div class="container">
+
+		<h2>Assets</h2>
+
+		<table class="assetsTable">
+			<tr>
+				<th>Title</th>
+				<th>Amount</th>
+				<th>Type</th>
+				<th>Product code</th>
+				<th>Added by</th>
+				<th>Added</th>
+			</tr>
+			<tr th:each="asset : ${assets}">
+				<td th:text="${asset.title}">Title</td>
+				<td th:text="${asset.amount}" min="1" max="10000" style="width: 1em">Amount</td>
+				<td th:text="${asset.type}">Type</td>
+				<td th:text="${asset.code}">Product code</td>
+				<td th:text="${asset.user.username}">Added by</td>
+				<td th:text="${asset.date}">Added</td>
+				<!-- <td class="deleteAsset">Ⓧ</td> -->
+			</tr>
+		</table>
+
+		<h2 th:text="${errors}" class="error"></h2>
+
+		<div class="assetForm">
+			<form method="POST" th:action="@{/assets}" action="/assets">
+				<h2>Add new asset</h2>
+				<input type="text" name="title" placeholder="Asset title" /> <br>
+				<input type="text" name="code" placeholder="Product code" /> <br>
+				<input type="text" name="type" placeholder="Asset type" /> <br>
+				<input type="number" name="amount" placeholder="Asset amount" /> <br>
+				<input type="submit" value="Add" />
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
