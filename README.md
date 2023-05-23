@@ -3,7 +3,7 @@
 Inventory system with secure account login and asset adding features.
 Created with Java, Spring MVC, and Thymeleaf (a server-side Java template engine), using MySQL database.
 
-The app is built from Dockerfile and hosted on Render (the free tier hosting is slow but the app does work), and the database is offered by Free MySQL Hosting.
+The app is built from Dockerfile and hosted on Render (app building on free tier hosting is slow but the app does work), and the database is offered by Free MySQL Hosting.
 
 For testing purposes, you can login on the website as Patrick with password p1p1
 
